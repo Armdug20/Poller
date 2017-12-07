@@ -6,10 +6,12 @@ bot.remove_command("help")
 with open("token.txt") as f:
     token = f.read()
 
+
 @bot.event
 async def on_ready():
     inv = "https://discordapp.com/oauth2/authorize?&client_id={}&scope=bot&permissions=0"
     print(inv.format(bot.user.id))
+
 
 @bot.command(pass_context=True)
 async def test(ctx):
